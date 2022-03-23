@@ -1,0 +1,80 @@
+.main {
+  max-height: 50vh;
+  margin-bottom: 50px;
+  color: #fff;
+}
+.itemNum {
+  color: #374950;
+}
+.mainContent {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid #fff;
+}
+.title {
+  font-size: 96px;
+  font-weight: 800;
+}
+.punkHighlight {
+  flex: 0.25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.punkContainer {
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  margin-right: 20px;
+}
+.selectedPunk {
+  object-fit: contain;
+  max-width: min(30vw, 40vh);
+  max-height: 30vw;
+}
+
+.punkDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0.75;
+}
+.owner {
+  color: #fff;
+  display: flex;
+}
+.ownerDetails {
+  display: flex;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
+.circle img {
+  background-color: purple;
+  height: 60px;
+  margin: 10px;
+  width: 60px;
+  border-radius: 100%;
+}
+
+.ownerLink {
+  border: 1px solid #fff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  height: 60px;
+  display: flex;
+  width: 60px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.ownerLink > img {
+  height: 40px;
+}
+
+.ownerNameAndHandle > .ownerHandle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #374950;
+}

@@ -1,14 +1,17 @@
 import React from 'react';
-import weth from '../assets/owner/weth.png';
+import weth from '../assets/weth.png';
 import './collectionCard.css';
 const CollectionCard = ({
   id,
   name,
   traits,
   image,
+  onClick,
 }) => {
   return (
-    <div className="collectionCard">
+    <div
+      className="collectionCard"
+      onClick={onClick}>
       <img src={image} alt="" />
       <div className="details">
         <div className="name">
