@@ -1,7 +1,7 @@
 import React from 'react';
 import weth from '../assets/owner/weth.png';
 import './collectionCard.css';
-const collectionCard = ({
+const CollectionCard = ({
   id,
   name,
   traits,
@@ -29,4 +29,4 @@ const collectionCard = ({
   );
 };
 
-export default collectionCard;
+export default CollectionCard;
