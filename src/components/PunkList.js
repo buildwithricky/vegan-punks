@@ -3,11 +3,11 @@ import CollectionCard from './CollectionCard';
 import './punklist.css';
 const PunkList = ({
   punkListData,
-  setActivePunk,
+  setSelectedPunk,
 }) => {
   return (
     <div className="punkList">
-      {punkListData.map((punk) => {
+      {punkListData.map((punk, index) => {
         return (
           <div key={punk.token_id}>
             <CollectionCard
@@ -15,7 +15,9 @@ const PunkList = ({
               name={punk.name}
               traits={punk.traits}
               image={punk.image_url}
-              onClick={() => setActivePunk(punk)}
+              onClick={() =>
+                setSelectedPunk(index)
+              }
             />
           </div>
         );
