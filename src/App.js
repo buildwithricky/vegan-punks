@@ -13,23 +13,31 @@ const App = () => {
     useState([]);
   const [selectedPunk, setSelectedPunk] =
     useState(0);
+  const [err, setErr] = useState(
+    'no error has occurred'
+  );
 
   useEffect(() => {
-    const getMyNfts = async () => {
-      const openseaData = await axios.get(
-        'https://testnets-api.opensea.io/api/v1/assets?asset_contract_address=0x9e19f8d3833EfC0cc0659768fe57a629D518a7f0&order_direction=asc'
-      );
-      const data = await openseaData.data.assets;
-      setPunkListData(data);
-    };
+    try {
+      const getMyNfts = async () => {
+        const openseaData = await axios.get(
+          'https://testnets-api.opensea.io/api/v1/assets?asset_contract_address=0x9e19f8d3833EfC0cc0659768fe57a629D518a7f0&order_direction=asc'
+        );
+        const data = await openseaData.data
+          .assets;
+        setPunkListData(data);
+      };
 
-    return getMyNfts();
+      getMyNfts();
+    } catch (e) {
+      console.log(e.message);
+    }
   }, []);
 
   return (
     <div className="app">
       <Header />
-      {punkListData.length > 0 && (
+      {punkListData.length > 0 ? (
         <>
           <Main
             punkListData={punkListData}
@@ -41,6 +49,10 @@ const App = () => {
             setSelectedPunk={setSelectedPunk}
           />
         </>
+      ) : (
+        <div className="loaderContainer">
+          <div className="loader"></div>
+        </div>
       )}
     </div>
   );

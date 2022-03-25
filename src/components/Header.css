@@ -1,6 +1,8 @@
 .header {
   color: white;
   height: 100px;
+
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,6 +38,7 @@
 .headerItems {
   display: flex;
   color: #a1a5b0;
+  cursor: pointer;
 }
 
 .headerItems > p {
@@ -72,4 +75,22 @@
   padding: 15px 40px;
   border-radius: 50px;
   color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .punkLogo {
+    width: 100px;
+  }
+  .headerItems {
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    background-color: #1c1c1e;
+  }
+  .loginButton {
+    display: none;
+  }
 }
